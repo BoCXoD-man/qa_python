@@ -20,8 +20,8 @@
 ## Как запустить
 
 ```bash
-pytest -v
-pytest --cov=main --cov-report=term-missing
+pytest -v tests.py
+pytest --cov=main tests.py
 ```
 ## Требования
 
