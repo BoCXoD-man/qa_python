@@ -89,3 +89,15 @@ class TestBooksCollector:
         collector.add_new_book('Дюна')
         collector.set_book_genre('Дюна', 'Фантастика')
         assert collector.get_books_genre() == {'Дюна': 'Фантастика'}
+
+    def test_get_book_genre_returns_correct_genre(self):
+        collector = BooksCollector()
+        collector.add_new_book('Дюна')
+        collector.set_book_genre('Дюна', 'Фантастика')
+        assert collector.get_book_genre('Дюна') == 'Фантастика'
+
+    def test_get_list_of_favorites_books_returns_correct_list(self):
+        collector = BooksCollector()
+        collector.add_new_book('Три мушкетера')
+        collector.add_book_in_favorites('Три мушкетера')
+        assert collector.get_list_of_favorites_books() == ['Три мушкетера']
